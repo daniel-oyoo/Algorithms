@@ -1,5 +1,10 @@
 # In-Place Merge Sort
 
+## Available Implementations
+
+### C Implementation
+# In-Place Merge Sort
+
 This directory contains an in-place implementation of the **Merge Sort** algorithm. The primary goal of an in-place merge sort is to **sort an array efficiently while minimizing additional memory usage**, especially during the merge step, unlike a traditional merge sort which typically uses a temporary auxiliary array.
 
 ---
@@ -31,3 +36,60 @@ The unique aspect of this "in-place" version lies in the **merge step**. While s
 
 Here are examples demonstrating the sort function's behavior with various inputs:
 
+
+
+### Java Implementation (Added for Issue #19)
+**File**: `InPlaceMergeSort.java`
+
+**Description**: Java implementation of in-place merge sort that avoids using additional arrays during merging.
+
+**Algorithm**: 
+- Uses divide-and-conquer strategy
+- Merges in-place using element shifting instead of temporary arrays
+- Maintains O(1) auxiliary space for merging operations
+
+**Complexity Analysis**:
+- Time Complexity: O(n log n)
+- Space Complexity: O(log n) for recursion stack
+- Auxiliary Space: O(1) for merging
+
+**Sample Input/Output**:
+
+Input:
+```java
+int[] arr = {12, 11, 13, 5, 6, 7};
+InPlaceMergeSort.sort(arr);
+=== In-Place Merge Sort Test Cases ===
+
+Test Case 1: Unsorted Array
+Input:  [12, 11, 13, 5, 6, 7]
+Output: [5, 6, 7, 11, 12, 13]
+
+Test Case 2: Already Sorted Array
+Input:  [1, 2, 3, 4, 5, 6]
+Output: [1, 2, 3, 4, 5, 6]
+
+Test Case 3: Reverse Sorted Array
+Input:  [9, 8, 7, 6, 5, 4]
+Output: [4, 5, 6, 7, 8, 9]
+
+Test Case 4: Array with Duplicate Elements
+Input:  [4, 2, 4, 1, 2, 3, 4]
+Output: [1, 2, 2, 3, 4, 4, 4]
+
+Test Case 5: Single Element Array
+Input:  [42]
+Output: [42]
+
+Test Case 6: Empty Array
+Input:  []
+Output: []
+
+Test Case 7: Larger Array (first 10 elements shown)
+Input (first 10):  [64, 34, 25, 12, 22, 11, 90, 88, 75, 50...]
+Output (first 10): [11, 12, 22, 25, 33, 34, 44, 50, 55, 64...]
+
+=== Complexity Analysis ===
+Time Complexity: O(n log n)
+Space Complexity: O(log n) for recursion stack
+Auxiliary Space for Merging: O(1)
